@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+<!-- Page Title-->
+{% block title %}Login{% endblock %}
+
+<!-- Page Content -->
+{% block body %}
+
+    <div class="main">
+        <div class="container">
+
+            <form class="form" method="post">
+                {% csrf_token %}
+                <h2 class="form_title">Sign In</h2>
+                {% crispy form %}
+                <br>
+                <small class="text-muted" style="margin-top: 60%;">
+                    don't have an account? <a href="{% url 'register' %}">register</a>
+                </small>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}
